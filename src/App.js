@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Produtos from './components/produtos/index';
 import Filtro from './componentes/filtro/filtro'
 import styled from "styled-components"
 
@@ -9,6 +9,7 @@ class App extends React.Component {
     return (
       <div>
         <Filtro/>
+        <Produtos/>
       </div>
     );
   }
