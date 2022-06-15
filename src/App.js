@@ -1,17 +1,18 @@
 import React from 'react';
-import './App.css';
+import './App.css'
 import Produtos from './components/produtos/index';
+import Filtro from './componentes/filtro/filtro'
+import styled from "styled-components"
 
-
-function App() {
-  return (
-    <div className="App">
-        <div>
-            <Produtos></Produtos>
-        </div>
-        <h1> testando</h1>
-    </div>
-  )
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Filtro/>
+        <Produtos/>
+      </div>
+    );
+  }
 }
 
 export default App;
