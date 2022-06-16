@@ -1,0 +1,10 @@
+
+
+/* Orginiza os produtos dentro do contene vitrine */
+
+.vitrine {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px; 
+}

@@ -1,0 +1,25 @@
+:root {
+
+    --cor-principal : #000;
+}
+
+/* tratamento de imagem do produto */
+.contene-produtos img {
+    width: 200px;
+    height: 200px;
+
+}
+
+/* organizando contene do produto individual  */
+.contene-produtos {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+/* parte das informação do contene produto preço e nome */
+.contene-descricao-produto {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
