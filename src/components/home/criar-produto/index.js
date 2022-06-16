@@ -12,8 +12,8 @@ class Produto extends React.Component {
                 <img src={this.props.imagem}></img>
                 <div className='contene-descricao-produto'>
                   <p>{this.props.nome} </p>
-                  <p>R${this.props.valor}</p>
-                  <button className="adicionar-carinho">Adicionar ao carrinho</button>
+                  <b>R${this.props.valor}</b>
+                  <button className='adicionar-carrinho'><p className='letra-carrinho'>Adicionar ao carrinho</p></button>
                 </div>
               </div>
             </div>
@@ -22,4 +22,4 @@ class Produto extends React.Component {
 }
 }
 
-export default Produto;
+export default Produto; 
