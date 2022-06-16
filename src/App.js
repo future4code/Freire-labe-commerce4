@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css'
 import VitrineProdutos from './components/home/vitrine/index';
-// import Filtro from './componentes/filtro/filtro'
-// import styled from "styled-components"
+import Filtro from './components/filtro/filtro';
+
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <VitrineProdutos></VitrineProdutos>
+          <VitrineProdutos></VitrineProdutos>
       </div>
     );
   }
