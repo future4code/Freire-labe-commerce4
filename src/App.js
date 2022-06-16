@@ -167,6 +167,7 @@ class App extends Component {
           totalValue={this.getTotalValue()}
         />
       </div>
+    </div>
     );
   }
 }
