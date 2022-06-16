@@ -1,22 +1,13 @@
-import React, {Component} from 'react';
 
-// components
+import React, {Component} from 'react';
 import Carrinho from './components/carrinho'
 import Produtos from './components/produtos/index';
+import './App.css'
+import VitrineProdutos from './components/home/vitrine/index';
 import Filtro from './components/filtro/filtro';
-import styled from "styled-components";
-
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 25% 50% 25%;
-`
-
-// styles
 import './App.css'
 import { MainContainer } from './global-style'
 import { CartProduct } from './components/carrinho/styles';
-
-// icons
 import { TrashIcon } from './assets/icons/icons';
 
 
@@ -84,11 +75,12 @@ class App extends Component {
   }
   render() {
     return (
-      <Container>
+       <div>
         <Filtro/>
-        <Produtos/>
+        <VitrineProdutos></VitrineProdutos>
         <Carrinho cart={this.renderCartList()} totalValue={this.getTotalValue()}/>
-      </Container>
+      </div>
+
     );
   }
 }
