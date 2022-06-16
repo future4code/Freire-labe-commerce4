@@ -3,7 +3,13 @@ import React, {Component} from 'react';
 // components
 import Carrinho from './components/carrinho'
 import Produtos from './components/produtos/index';
-import Filtro from './components/filtro/filtro'
+import Filtro from './components/filtro/filtro';
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+`
 
 // styles
 import './App.css'
@@ -78,11 +84,11 @@ class App extends Component {
   }
   render() {
     return (
-      <MainContainer>
-        <Filtro />
-        <Produtos />
+      <Container>
+        <Filtro/>
+        <Produtos/>
         <Carrinho cart={this.renderCartList()} totalValue={this.getTotalValue()}/>
-      </MainContainer>
+      </Container>
     );
   }
 }
