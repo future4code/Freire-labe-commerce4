@@ -26,28 +26,17 @@ margin-bottom: 10px;
 `
 
 class Filtro extends React.Component {
-    state = {
-        valorMinimo: 100,
-        valorMaximo: 1000,
-        buscaNome: 'Produto'
-    }
 
     onChangeValorMinimo = (event) => {
-        this.setState({
-          valorMinimo: event.target.value
-        })
+        this.props.enviarNovoValorMinimo(event.target.value);
     }
-    
+
     onChangeValorMaximo = (event) => {
-        this.setState({
-          valorMaximo: event.target.value
-        })
+        this.props.enviarNovoValorMaximo(event.target.value);
     }
-    
+
     onChangeBuscaNome = (event) => {
-        this.setState({
-          buscaNome: event.target.value
-        })
+        this.props.enviarNovoBuscaNome(event.target.value);
     }
 
     render() {
@@ -61,7 +50,7 @@ class Filtro extends React.Component {
                       type="number" 
                       id="valormin" 
                       name="valormin"
-                      value={this.state.valorMinimo}
+                      value={this.props.filtros.valorMinimo}
                       onChange={this.onChangeValorMinimo}
                   />
                   <label htmlFor="valormax">Valor máximo:</label>
@@ -69,7 +58,7 @@ class Filtro extends React.Component {
                       type="number" 
                       id="valormax" 
                       name="valormax"
-                      value={this.state.valorMaximo}
+                      value={this.props.filtros.valorMaximo}
                       onChange={this.onChangeValorMaximo}
                   />
                   <label htmlFor="nome">Busca por nome:</label>
@@ -77,7 +66,7 @@ class Filtro extends React.Component {
                       type="text" 
                       id="nome" 
                       name="nome"
-                      value={this.state.buscaNome}
+                      value={this.props.filtros.buscaNome}
                       onChange={this.onChangeBuscaNome}
                   />
               </Form>

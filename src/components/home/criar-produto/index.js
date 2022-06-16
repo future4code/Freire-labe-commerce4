@@ -4,16 +4,21 @@ import './index.css';
 // criar produtos individuais personalizado (imagem,nome,preço) e tem um botão adicionar ao carrinho
 
 class Produto extends React.Component {
+
+  adicionarProdutoAoCarrinho = () => {
+    this.props.produtoSelecionado(this.props.id);
+  }
+
   render() {
     return (
-        <div className="produto">
+        <div id={this.props.id} className="produto">
             <div className='contene-produtos-espostos'>
               <div className='contene-produtos'>
-                <img src={this.props.imagem}></img>
+                <img src={this.props.imagem} alt={this.props.nome}></img>
                 <div className='contene-descricao-produto'>
                   <p>{this.props.nome} </p>
-                  <b>R${this.props.valor}</b>
-                  <button className='adicionar-carrinho'><p className='letra-carrinho'>Adicionar ao carrinho</p></button>
+                  <b>R${this.props.value}</b>
+                  <button className='adicionar-carrinho'  onClick={this.adicionarProdutoAoCarrinho} ><p className='letra-carrinho'>Adicionar ao carrinho</p></button>
                 </div>
               </div>
             </div>
