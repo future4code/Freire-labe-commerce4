@@ -17,8 +17,8 @@ class Produto extends React.Component {
                 <img src={this.props.imagem} alt={this.props.nome}></img>
                 <div className='contene-descricao-produto'>
                   <p>{this.props.nome} </p>
-                  <p>R${this.props.value}</p>
-                  <button className="adicionar-carinho" onClick={this.adicionarProdutoAoCarrinho}>Adicionar ao carrinho</button>
+                  <b>R${this.props.value}</b>
+                  <button className='adicionar-carrinho'  onClick={this.adicionarProdutoAoCarrinho} ><p className='letra-carrinho'>Adicionar ao carrinho</p></button>
                 </div>
               </div>
             </div>
@@ -27,4 +27,4 @@ class Produto extends React.Component {
 }
 }
 
-export default Produto;
+export default Produto; 

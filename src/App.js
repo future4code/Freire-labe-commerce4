@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import Carrinho from './components/carrinho'
 import './App.css'
 import VitrineProdutos from './components/home/vitrine/index';
+import Herder from './components/header';
 import Filtro from './components/filtro/filtro';
 import { CartProduct } from './components/carrinho/styles';
 import { TrashIcon } from './assets/icons/icons';
@@ -147,7 +148,10 @@ class App extends Component {
 
   render() {
     return (
+      <div>
+       <Herder></Herder>
        <div className="container">
+
         <Filtro
           filtros={this.state.filtros}
           enviarNovoValorMinimo={this.onChangeValorMinimo}
