@@ -18,7 +18,7 @@ export const CartContainer = styled.section`
     right: ${({ open }) => (open ? '0' : '10px')};
     top: ${({ open }) => (open ? '0' : '-4.5rem')};
     z-index: 2;
-    background-color:${({ open }) => (open ? '#FFFFFF' : '#8a0057')};
+    background-color:${({ open }) => (open ? '#f5f5f5' : '#8a0057')};
     color: ${({ open }) => (open ? '#0e0e0e' : '#edf0f1')};
 
     h3 {
