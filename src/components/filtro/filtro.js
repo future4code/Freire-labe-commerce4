@@ -4,11 +4,9 @@ import styled from "styled-components"
 const Divforms = styled.div`
 display: flex;
 flex-direction: column;
-margin-left: 30px;
-margin-top: 30px;
 border: solid 1px;
-width: 300px;
-height: 100vh;
+width: 20%;
+height: 70%;
 `
 const Filtros = styled.div`
 margin-left: 20px;

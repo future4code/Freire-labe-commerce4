@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CartContainer = styled.section`
-    width: 100%;
+    width: ${({ open }) => (open ? '20%' : '12%')};
     min-height: ${({ open }) => (open ? '70%' : '20px')};
     display: flex;
     flex-direction: column;

@@ -3,7 +3,7 @@ import './index.css';
 
 const logo = "https://s3-sa-east-1.amazonaws.com/projetos-artes/fullsize%2F2014%2F02%2F17%2F02%2FWDL-Logo-37189_72584_060705192_418442636.jpg"
 
-class Herder extends React.Component {
+class Header extends React.Component {
   render() {
     return (
         <div className="contene">
@@ -25,4 +25,4 @@ class Herder extends React.Component {
 }
 }
 
-export default Herder;
+export default Header;
