@@ -98,19 +98,59 @@ class App extends Component {
       }
     });
 
-    this.setState({
-      cart: [
-        ...this.state.cart, {...produtoFiltradoParaAdicionarAoCarrinho[0], quantity: 1, id: Math.random()}
-      ]
-    })
+    const [ novoProdutoCarrinho ] = produtoFiltradoParaAdicionarAoCarrinho
+
+    const jaExisteProdutoNoCarrinho = this.state.cart.find((produto) => {
+      return produto.id === novoProdutoCarrinho.id
+    });
+
+    if(jaExisteProdutoNoCarrinho) {
+      const novoCarrinhoComQuantidadeAtualizada = this.state.cart.map((produto) => {
+        if(jaExisteProdutoNoCarrinho.id === produto.id) {
+          return {
+            ...produto,
+            quantity: produto.quantity + 1
+          }
+        } else {
+          return produto
+        }
+      })
+
+      this.setState({
+        cart: [
+          ...novoCarrinhoComQuantidadeAtualizada
+        ]
+      })
+    } else {
+      this.setState({
+        cart: [
+          ...this.state.cart,
+          {...novoProdutoCarrinho, quantity: 1}
+        ]
+      })
+    }
   }
 
   removeProduct = (id) => {
     const { cart } = this.state
 
-    const newCart = cart.filter((product) => {
-      return product.id !== id
-    })
+    const itemToRemove = cart.find((product) => product.id === id);
+
+    let newCart = [];
+
+    if(itemToRemove.quantity > 1) {
+      newCart = cart.map((produto) => {
+        if(produto.quantity > 1) {
+          return {...produto, quantity: produto.quantity - 1}
+        } else {
+          return produto
+        }
+      })
+    } else {
+      newCart = cart.filter((product) => {
+        return product.id !== id
+      })
+    }
 
     this.setState({
       cart: newCart
