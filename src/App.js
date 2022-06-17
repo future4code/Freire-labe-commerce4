@@ -1,16 +1,18 @@
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Carrinho from './components/carrinho'
 import './App.css'
 import VitrineProdutos from './components/home/vitrine/index';
-import Herder from './components/header';
+import Header from './components/header';
 import Filtro from './components/filtro/filtro';
 import { CartProduct } from './components/carrinho/styles';
 import { TrashIcon } from './assets/icons/icons';
+import {MainContainer} from './global-style';
+import Footer from './components/footer';
 
 class App extends Component {
   state = {
-    filtros : {
+    filtros: {
       valorMinimo: 25,
       valorMaximo: 1000,
       buscaNome: 'Produto'
@@ -50,7 +52,7 @@ class App extends Component {
     const filtros = this.state.filtros;
 
     const produtosFiltrados = this.state.produtos.filter((produto) => {
-      if(produto.value >= filtros.valorMinimo && produto.value <= filtros.valorMaximo && produto.nome.includes(filtros.buscaNome)) {
+      if (produto.value >= filtros.valorMinimo && produto.value <= filtros.valorMaximo && produto.nome.includes(filtros.buscaNome)) {
         return produto;
       }
     })
@@ -93,20 +95,20 @@ class App extends Component {
     const produtos = this.state.produtos;
 
     const produtoFiltradoParaAdicionarAoCarrinho = produtos.filter((produto) => {
-      if(produto.id === id) {
+      if (produto.id === id) {
         return produto
       }
     });
 
-    const [ novoProdutoCarrinho ] = produtoFiltradoParaAdicionarAoCarrinho
+    const [novoProdutoCarrinho] = produtoFiltradoParaAdicionarAoCarrinho
 
     const jaExisteProdutoNoCarrinho = this.state.cart.find((produto) => {
       return produto.id === novoProdutoCarrinho.id
     });
 
-    if(jaExisteProdutoNoCarrinho) {
+    if (jaExisteProdutoNoCarrinho) {
       const novoCarrinhoComQuantidadeAtualizada = this.state.cart.map((produto) => {
-        if(jaExisteProdutoNoCarrinho.id === produto.id) {
+        if (jaExisteProdutoNoCarrinho.id === produto.id) {
           return {
             ...produto,
             quantity: produto.quantity + 1
@@ -125,7 +127,7 @@ class App extends Component {
       this.setState({
         cart: [
           ...this.state.cart,
-          {...novoProdutoCarrinho, quantity: 1}
+          { ...novoProdutoCarrinho, quantity: 1 }
         ]
       })
     }
@@ -138,10 +140,10 @@ class App extends Component {
 
     let newCart = [];
 
-    if(itemToRemove.quantity > 1) {
+    if (itemToRemove.quantity > 1) {
       newCart = cart.map((produto) => {
-        if(produto.quantity > 1) {
-          return {...produto, quantity: produto.quantity - 1}
+        if (produto.quantity > 1) {
+          return { ...produto, quantity: produto.quantity - 1 }
         } else {
           return produto
         }
@@ -188,26 +190,27 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-       <Herder></Herder>
-       <div className="container">
+      <div className='container-principal'>
+        <Header />
+        <MainContainer>
 
-        <Filtro
-          filtros={this.state.filtros}
-          enviarNovoValorMinimo={this.onChangeValorMinimo}
-          enviarNovoValorMaximo={this.onChangeValorMaximo}
-          enviarNovoBuscaNome={this.onChangeBuscaNome}
-        />
-        <VitrineProdutos
-          produtos={this.produtosFiltrados()}
-          enviarProdutoSelecionado={this.addProdutToCart}
-        />
-        <Carrinho
-          cart={this.renderCartList()}
-          totalValue={this.getTotalValue()}
-        />
+          <Filtro
+            filtros={this.state.filtros}
+            enviarNovoValorMinimo={this.onChangeValorMinimo}
+            enviarNovoValorMaximo={this.onChangeValorMaximo}
+            enviarNovoBuscaNome={this.onChangeBuscaNome}
+          />
+          <VitrineProdutos
+            produtos={this.produtosFiltrados()}
+            enviarProdutoSelecionado={this.addProdutToCart}
+          />
+          <Carrinho
+            cart={this.renderCartList()}
+            totalValue={this.getTotalValue()}
+          />
+        </MainContainer>
+        <Footer/>
       </div>
-    </div>
     );
   }
 }
