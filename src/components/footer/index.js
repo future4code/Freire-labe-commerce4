@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { InstagramIcon, WhatsappIcon } from '../../assets/icons/icons';
 import "./style.css"
 
-const logo = "https://s3-sa-east-1.amazonaws.com/projetos-artes/fullsize%2F2014%2F02%2F17%2F02%2FWDL-Logo-37189_72584_060705192_418442636.jpg"
-
 class Footer extends Component {
     render() {
         return (
@@ -35,7 +33,7 @@ class Footer extends Component {
                 <div className='boxs'>
                     <h2>Sobre nós</h2>
                     <ul>
-                        <li><a href=''>FAQ</a></li>
+                        <li><a href=''>Nós fazemos camisetas engraçadas e de outro mundo, afinal a vida já está cheia de coisas sérias e chatas,sua camiseta não precisa ser assim também! Nós, da space.Geek, surgimo em 2019, graças a nossa paixão pelo mundo geek e pela peça mais versátil do nosso guarda-roupa: a camiseta.Cuidado é a palavra chave durante todo  o processo, desde a criação de estampas a produção das camisetas, estamparia e embalagem, o pensamento é um só: aagradar nossos clientes. Estamos sempre em processo de evolução e melhorias, por isso nossos canais de comunicação estão sempre abertos para receber feedbacks. Email: falacomigo@space.Geek.com.br Telefone(whatsapp) : (21) 96666-5555</a></li>
                     </ul>
                 </div>
                 <div className='footer'>
