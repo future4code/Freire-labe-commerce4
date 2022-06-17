@@ -26,7 +26,7 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 30px 10;
+    padding: 5px 8rem 0 10px;
 }
 
 .logo {
@@ -48,14 +48,14 @@ header {
 }
 
 .nav-links li a:hover{
-    color: #0088a9;
+    color: #ff009c;
 }
 
 .header-button{
     
     margin-left: 20px;
     padding: 9px 25px;
-    background-color: rgba(0,136, 169, 1);
+    background-color: #8a0057;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -63,6 +63,6 @@ header {
 }
 
 .header-button:hover {
-    background-color: rgba(0,136,169,0.8);
+    background-color: #ff009c;
 }
 

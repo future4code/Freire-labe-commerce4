@@ -1,9 +1,9 @@
 import React from 'react'
 import { BagIconContainer } from './styles.js'
 
-export const BagIcon = () => {
+export const BagIcon = ({open}) => {
   return (
-    <BagIconContainer viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <BagIconContainer open={open} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <g data-name="Layer 2" id="Layer_2">
         <g id="Workspace">
           <rect className="cls-1" height="24" width="24" />

@@ -40,10 +40,10 @@ class Footer extends Component {
                     <h2>Fale conosco</h2>
                     <div className="sociais">
                         <div className='social'>
-                            <a href='#'><i className='fa fa-instagram' aria-hidden="true"><InstagramIcon/></i></a>
+                            <a href='https://www.instagram.com/' target="_blank"><i className='fa fa-instagram' aria-hidden="true"><InstagramIcon/></i></a>
                         </div>
                         <div className='social'>
-                            <a href='#'><i className='fa fa-whatsapp' aria-hidden="true"></i><WhatsappIcon/></a>
+                            <a href='https://web.whatsapp.com/' target="_blank"><i className='fa fa-whatsapp' aria-hidden="true"></i><WhatsappIcon/></a>
                         </div>
                     </div>
                 </div>

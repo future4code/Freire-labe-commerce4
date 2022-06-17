@@ -7,6 +7,7 @@ flex-direction: column;
 border: solid 1px;
 width: 20%;
 height: 70%;
+min-height: 700px;
 `
 const Filtros = styled.div`
 margin-left: 20px;
@@ -21,6 +22,10 @@ width: 150px;
 
 const Input = styled.input`
 margin-bottom: 10px;
+border-radius: 10px;
+height: 30px;
+text-align: center;
+margin-top: 10px;
 `
 
 class Filtro extends React.Component {
@@ -50,6 +55,7 @@ class Filtro extends React.Component {
                       name="valormin"
                       value={this.props.filtros.valorMinimo}
                       onChange={this.onChangeValorMinimo}
+                      placeholder="mínimo" 
                   />
                   <label htmlFor="valormax">Valor máximo:</label>
                   <Input 
@@ -58,6 +64,7 @@ class Filtro extends React.Component {
                       name="valormax"
                       value={this.props.filtros.valorMaximo}
                       onChange={this.onChangeValorMaximo}
+                      placeholder="máximo" 
                   />
                   <label htmlFor="nome">Busca por nome:</label>
                   <Input 
@@ -66,6 +73,7 @@ class Filtro extends React.Component {
                       name="nome"
                       value={this.props.filtros.buscaNome}
                       onChange={this.onChangeBuscaNome}
+                      placeholder="nome" 
                   />
               </Form>
             </Filtros>

@@ -7,24 +7,15 @@ import { CartContainer } from './styles';
 import { BagIcon, CloseIcon } from '../../assets/icons/icons';
 
 class Carrinho extends Component {
-    state = {
-        open: true
-    }
-
-    openCart = () => {
-        const { open } = this.state
-
-        this.setState({ open: !open })
-    }
 
     render() {
-        const { open } = this.state;
+        const { open } = this.props;
         const { cart, totalValue } = this.props;
 
         return (
             <CartContainer open={open}>
-                <h3 onClick={() => this.openCart()}>
-                    <BagIcon />
+                <h3 onClick={this.props.openCart}>
+                    <BagIcon open={open}/>
                     Sacola
                     <CloseIcon/>
                 </h3>

@@ -6,7 +6,7 @@ export const BagIconContainer = styled.svg `
     }
     
     .cls-2 {
-        stroke: #0e0e0e;
+        stroke: ${({ open }) => (open ? '#0e0e0e' : '#edf0f1')};
         stroke-linecap:round;
         stroke-linejoin:round;
     }
