@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
+import logo from '../../assets/icons/spacegeeklogo.jpg'
 
-const logo = "https://s3-sa-east-1.amazonaws.com/projetos-artes/fullsize%2F2014%2F02%2F17%2F02%2FWDL-Logo-37189_72584_060705192_418442636.jpg"
 
 class Header extends React.Component {
   render() {
