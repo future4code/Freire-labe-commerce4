@@ -3,10 +3,6 @@
     --cor-principal : #000;
 }
 
-.produto {
-    width: calc(100% / 3);
-} 
-
 /* tratamento de imagem do produto */
 .contene-produtos img {
     max-width: 100%;

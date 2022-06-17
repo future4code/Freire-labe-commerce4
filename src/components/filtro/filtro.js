@@ -7,6 +7,7 @@ flex-direction: column;
 border: solid 1px;
 width: 20%;
 height: 70%;
+min-height: 700px;
 `
 const Filtros = styled.div`
 margin-left: 20px;

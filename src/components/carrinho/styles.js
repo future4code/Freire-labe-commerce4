@@ -1,18 +1,25 @@
 import styled from 'styled-components';
 
 export const CartContainer = styled.section`
-    width: ${({ open }) => (open ? '20%' : '12%')};
-    min-height: ${({ open }) => (open ? '70%' : '20px')};
+    width: ${({ open }) => (open ? '20%' : '6%')};
+    min-height: ${({ open }) => (open ? '50%' : '15px')};
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     border: 1px solid black;
-    border-radius: ${({ open }) => (open ? '0' : '0 0 0 40px')};
-    padding: 10px;
+    font-size: 14px;
+    border-radius: ${({ open }) => (open ? '0' : '10%')};
+    padding:  ${({ open }) => (open ? '10px' : '0')};
     position: relative;
     transition: all 0.3s ease;
     scroll-behavior: smooth;
+    position: absolute;
+    right: ${({ open }) => (open ? '0' : '10px')};
+    top: ${({ open }) => (open ? '0' : '-4.5rem')};
+    z-index: 2;
+    background-color:${({ open }) => (open ? '#FFFFFF' : '#8a0057')};
+    color: ${({ open }) => (open ? '#0e0e0e' : '#edf0f1')};
 
     h3 {
         width: 100%;

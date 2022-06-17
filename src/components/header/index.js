@@ -17,7 +17,6 @@ class Header extends React.Component {
                             <li><a href="#"> Formas de Pagamento</a></li>
                         </ul>
                     </nav>
-                    <a className='cta' href='#'><button className='header-button' > Carrinho</button></a>
                 </header>
             </body>
         </div>

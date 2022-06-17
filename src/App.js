@@ -7,7 +7,7 @@ import Header from './components/header';
 import Filtro from './components/filtro/filtro';
 import { CartProduct } from './components/carrinho/styles';
 import { TrashIcon } from './assets/icons/icons';
-import {MainContainer} from './global-style';
+import { MainContainer } from './global-style';
 import Footer from './components/footer';
 
 class App extends Component {
@@ -61,7 +61,8 @@ class App extends Component {
         value: 100
       }
     ],
-    cart: []
+    cart: [],
+    open: false
   }
 
   // Lógicas para Filtrar Produtos
@@ -138,15 +139,17 @@ class App extends Component {
 
       this.setState({
         cart: [
-          ...novoCarrinhoComQuantidadeAtualizada
-        ]
+          ...novoCarrinhoComQuantidadeAtualizada,
+        ],
+        open: true
       })
     } else {
       this.setState({
         cart: [
           ...this.state.cart,
           { ...novoProdutoCarrinho, quantity: 1 }
-        ]
+        ],
+        open: true
       })
     }
   }
@@ -204,6 +207,12 @@ class App extends Component {
     return newCartList;
   }
 
+  openCart = () => {
+    const { open } = this.state
+
+    this.setState({ open: !open })
+  }
+
   // Renderização do Template Principal
 
   render() {
@@ -219,15 +228,18 @@ class App extends Component {
             enviarNovoBuscaNome={this.onChangeBuscaNome}
           />
           <VitrineProdutos
+            open={this.state.open}
             produtos={this.produtosFiltrados()}
             enviarProdutoSelecionado={this.addProdutToCart}
           />
           <Carrinho
+            open={this.state.open}
+            openCart={() => this.openCart()}
             cart={this.renderCartList()}
             totalValue={this.getTotalValue()}
           />
         </MainContainer>
-        <Footer/>
+        <Footer />
       </div>
     );
   }

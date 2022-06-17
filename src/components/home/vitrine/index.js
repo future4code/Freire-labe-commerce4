@@ -11,11 +11,13 @@ class VitrineProdutos extends React.Component {
     }
 
     render() {
+        console.log(this.props.open)
         return(
             <div className="vitrine">
                 {this.props.produtos.map((produto) => {
                     return (
                         <Produto
+                            open={this.props.open}
                             id={produto.id}
                             key={produto.id}
                             imagem={produto.imagem}

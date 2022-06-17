@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import { ProdutoContainer } from './style';
 
 // criar produtos individuais personalizado (imagem,nome,preço) e tem um botão adicionar ao carrinho
 
@@ -10,8 +11,9 @@ class Produto extends React.Component {
   }
 
   render() {
+    console.log("open", this.props.open)
     return (
-        <div id={this.props.id} className="produto">
+        <ProdutoContainer open={this.props.open} id={this.props.id}>
             <div className='contene-produtos-espostos'>
               <div className='contene-produtos'>
                 <img src={this.props.imagem} alt={this.props.nome}></img>
@@ -22,7 +24,7 @@ class Produto extends React.Component {
                 </div>
               </div>
             </div>
-        </div>
+        </ProdutoContainer>
     )
 }
 }
