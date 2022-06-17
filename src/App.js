@@ -13,34 +13,52 @@ import Footer from './components/footer';
 class App extends Component {
   state = {
     filtros: {
-      valorMinimo: 25,
+      valorMinimo: "",
       valorMaximo: 1000,
-      buscaNome: 'Produto'
+      buscaNome: ""
     },
     produtos: [
       {
         id: Math.random(),
-        imagem: 'https://static.zattini.com.br/produtos/bota-coturno-feminina-vicerinne-tratorada-salto-alto/06/GYK-0049-006/GYK-0049-006_zoom1.jpg?ts=1632126026',
+        imagem: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f42125dd-d1a1-4cf0-a6fb-e1b3a52ffe08/Screen20Shot202022-06-1720at2014.16.50.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220617%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220617T180503Z&X-Amz-Expires=86400&X-Amz-Signature=917c06dd9e441a4253197a6fa7ab40e06933a69b87453dfc6277b377acaec813&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen%252520Shot%2525202022-06-17%252520at%25252014.16.50.JPG.jpg%22&x-id=GetObject",
         nome: 'Produto Bota',
         value: 200
       },
       {
         id: Math.random(),
-        imagem: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR3mvNErXhxOBT_t_MH_7Sai7MlzK2qVJ5erUeoe6f_wBHJ06XTSk__mtpwHH3IKc3fAtZUGwnqvAmz&usqp=CAc',
+        imagem: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/69419e56-4065-46f7-8e89-7d5112a72732/Screen_Shot_2022-06-17_at_14.26.45.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220617%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220617T180415Z&X-Amz-Expires=86400&X-Amz-Signature=48af8ba6cd3d8c842708879da8e06501679ffaf234918ef711ef9bef156b96ce&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen%2520Shot%25202022-06-17%2520at%252014.26.45.JPG.jpg%22&x-id=GetObject',
         nome: 'Produto Luva',
         value: 100
       },
       {
         id: Math.random(),
-        imagem: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR3mvNErXhxOBT_t_MH_7Sai7MlzK2qVJ5erUeoe6f_wBHJ06XTSk__mtpwHH3IKc3fAtZUGwnqvAmz&usqp=CAc',
+        imagem: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/031a2132-d118-458a-add2-6ed6c10bafb4/Screen20Shot202022-06-1720at2014.18.17.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220617%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220617T180608Z&X-Amz-Expires=86400&X-Amz-Signature=026ca44543b80640065ab2403151e6c57a9f36fa49a63babd881dff038a5eedb&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen%252520Shot%2525202022-06-17%252520at%25252014.18.17.JPG.jpg%22&x-id=GetObject',
         nome: 'Produto Calça',
         value: 150
       },
       {
         id: Math.random(),
-        imagem: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR3mvNErXhxOBT_t_MH_7Sai7MlzK2qVJ5erUeoe6f_wBHJ06XTSk__mtpwHH3IKc3fAtZUGwnqvAmz&usqp=CAc',
+        imagem: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f39117df-374c-4151-8386-75839ae92ac7/Screen20Shot202022-06-1720at2014.18.27.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220617%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220617T180704Z&X-Amz-Expires=86400&X-Amz-Signature=ade883cd3ecef177fa1cf62bcf3fc5d92321725d36a78d40f8df7ac36d22d67d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen%252520Shot%2525202022-06-17%252520at%25252014.18.27.JPG.jpg%22&x-id=GetObject',
         nome: 'Produto Meia',
         value: 25
+      },
+      {
+        id: Math.random(),
+        imagem: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/69419e56-4065-46f7-8e89-7d5112a72732/Screen_Shot_2022-06-17_at_14.26.45.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220617%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220617T180415Z&X-Amz-Expires=86400&X-Amz-Signature=48af8ba6cd3d8c842708879da8e06501679ffaf234918ef711ef9bef156b96ce&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen%2520Shot%25202022-06-17%2520at%252014.26.45.JPG.jpg%22&x-id=GetObject',
+        nome: 'Produto Luva',
+        value: 100
+      },
+      {
+        id: Math.random(),
+        imagem: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/69419e56-4065-46f7-8e89-7d5112a72732/Screen_Shot_2022-06-17_at_14.26.45.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220617%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220617T180415Z&X-Amz-Expires=86400&X-Amz-Signature=48af8ba6cd3d8c842708879da8e06501679ffaf234918ef711ef9bef156b96ce&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen%2520Shot%25202022-06-17%2520at%252014.26.45.JPG.jpg%22&x-id=GetObject',
+        nome: 'Produto Luva',
+        value: 100
+      },
+      {
+        id: Math.random(),
+        imagem: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/69419e56-4065-46f7-8e89-7d5112a72732/Screen_Shot_2022-06-17_at_14.26.45.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220617%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220617T180415Z&X-Amz-Expires=86400&X-Amz-Signature=48af8ba6cd3d8c842708879da8e06501679ffaf234918ef711ef9bef156b96ce&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screen%2520Shot%25202022-06-17%2520at%252014.26.45.JPG.jpg%22&x-id=GetObject',
+        nome: 'Produto Luva',
+        value: 100
       }
     ],
     cart: []

@@ -3,8 +3,10 @@
 /* Orginiza os produtos dentro do contene vitrine */
 
 .vitrine {
-    width: 80%;
     display: flex;
+    margin-top: 10ch;
+    width: 80%;
+    min-height: auto;
     gap: 16px;
-    padding: 16px; 
+    padding: 32px; 
 }

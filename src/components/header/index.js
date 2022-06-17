@@ -12,12 +12,12 @@ class Header extends React.Component {
                     <img className='logo' src={logo} alt="logo"></img>
                     <nav>
                         <ul className='nav-links'>
-                            <li><a href="#">nome 1</a></li>
-                            <li><a href="#">nome 2</a></li>
-                            <li><a href="#">nome 3</a></li>
+                            <li><a href="#"> Home </a></li>
+                            <li><a href="#"> Ofertas </a></li>
+                            <li><a href="#"> Formas de Pagamento</a></li>
                         </ul>
                     </nav>
-                    <a className='cta' href='#'><button className='header-button' >nome 4</button></a>
+                    <a className='cta' href='#'><button className='header-button' > Carrinho</button></a>
                 </header>
             </body>
         </div>

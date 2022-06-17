@@ -11,13 +11,15 @@
 .contene-produtos img {
     max-width: 100%;
     max-height: 287px;
+    border-radius: 8px;
 }
 
 /* organizando contene do produto individual  */
 .contene-produtos {
     width: 100%;
     max-height: 45%;
-    border: 2px solid rgb(30, 0, 70);
+    border: 2px solid #550034;
+    border-radius: 8px;
     display: flex;
     gap: 8px;
     flex-direction: column;
@@ -32,12 +34,13 @@
     gap: 12px;
     flex-direction: column;
     padding: 16px;
+    
 }
 
 .adicionar-carrinho{
     margin-left: 20px;
     padding: 4px 16px;
-    background-color: rgb(38, 8, 66);
+    background-color: #8a0057;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -45,9 +48,10 @@
 }
 
 .adicionar-carrinho:hover {
-    background-color: rgb(97, 4, 184);
+    background-color: #ff009c;
 }
 
 .letra-carrinho {
     font-size: 14px;
 }
+
