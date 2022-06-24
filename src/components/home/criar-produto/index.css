@@ -1,0 +1,53 @@
+:root {
+
+    --cor-principal : #000;
+}
+
+/* tratamento de imagem do produto */
+.contene-produtos img {
+    max-width: 100%;
+    max-height: 287px;
+    border-radius: 8px;
+}
+
+/* organizando contene do produto individual  */
+.contene-produtos {
+    width: 100%;
+    max-height: 45%;
+    border: 2px solid #550034;
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+/* parte das informação do contene produto preço e nome */
+.contene-descricao-produto {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    padding: 16px;
+    
+}
+
+.adicionar-carrinho{
+    margin-left: 20px;
+    padding: 4px 16px;
+    background-color: #8a0057;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.adicionar-carrinho:hover {
+    background-color: #ff009c;
+}
+
+.letra-carrinho {
+    font-size: 14px;
+}
+
